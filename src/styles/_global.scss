@@ -1,0 +1,72 @@
+html,
+body {
+	font-family: $base-font;
+	height: 100%;
+}
+
+body {
+	:focus,
+	:active {
+		outline: 2px solid #2e6baf;
+	}
+
+	&.no-outline {
+		:focus,
+		:active {
+			outline: none !important;
+			box-shadow: none !important;
+
+			& + label,
+			& + label:before {
+				outline: none !important;
+				box-shadow: none !important;
+			}
+		}
+	}
+}
+
+.font-regular {
+	font-family: "GTWalsheim", $base-font;
+	font-weight: normal;
+}
+
+.font-light {
+	font-family: "GTWalsheimLight", $base-font;
+	font-weight: normal;
+}
+
+.font-medium {
+	font-family: "GTWalsheimMedium", $base-font;
+	font-weight: normal;
+}
+
+.font-bold,
+.bold,
+strong {
+	font-family: "GTWalsheimBold", $base-font;
+	font-weight: normal;
+}
+
+.disable-option {
+	pointer-events: none;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 30px;
+	transition: none;
+	user-select: none;
+
+	&:not(.btn-primary) {
+		border: 2px solid #000000;
+	}
+
+	& + .btn {
+		margin-top: 10px;
+	}
+
+	&.btn-300 {
+		width: 100%;
+		max-width: 300px;
+	}
+}

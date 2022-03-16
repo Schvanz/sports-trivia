@@ -1,0 +1,52 @@
+:host {
+	display: block;
+	padding: 50px 0;
+}
+
+h1 {
+	position: relative;
+
+	.float-number {
+		position: absolute;
+		right: calc(100% + 10px);
+	}
+}
+
+.question {
+	padding: 0 30px;
+}
+
+.options {
+	margin-bottom: 45px;
+
+	.btn {
+		display: block;
+
+		&.selected-correct {
+			border-color: green;
+			background-color: rgba(0, 255, 0, 0.2);
+		}
+		&.selected-incorrect {
+			border-color: red;
+			background-color: rgba(255, 0, 0, 0.2);
+		}
+	}
+}
+
+.feedback {
+	font-size: 18px;
+}
+
+.timer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 0;
+	background-color: dodgerblue;
+	transition: width 1s linear;
+
+	&.reset-bar {
+		transition: none;
+	}
+}

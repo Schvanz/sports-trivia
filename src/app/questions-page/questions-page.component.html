@@ -1,0 +1,28 @@
+<div #timerBar class="timer" [ngClass]="{'no-duration': feedback}"><h2></h2></div>
+<div *ngIf="vm$ | async as vm" class="container">
+	<div class="row justify-content-center">
+		<div class="question col-10 col-md-8 offset-auto">
+			<h1 class="mb-4">
+				<span class="float-number">{{ vm.questionNumber }}.</span>
+				{{ vm.question }}
+			</h1>
+			<div class="options">
+				<div
+					*ngFor="let option of vm.options; let i = index"
+					(click)="onOptionClicked($event, i)"
+					class="btn"
+					[ngClass]="{ 'disable-option': feedback }"
+				>
+					{{ option }}
+				</div>
+			</div>
+
+			<div *ngIf="feedback">
+				<h4 class="font-medium">{{ feedback }}</h4>
+				<div class="btn btn-primary" (click)="nextQuestion()">
+					Next question
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

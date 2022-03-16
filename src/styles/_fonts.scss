@@ -1,0 +1,16 @@
+@mixin font-face-new($name, $file_root, $font_display) {
+	@font-face {
+		font-family: "#{$name}";
+		src: url("webfonts/#{$file_root}.eot");
+		src: url("webfonts/#{$file_root}.eot?##{$file_root}") format("embedded-opentype"),
+			url("webfonts/#{$file_root}.woff2") format("woff2"),
+			url("webfonts/#{$file_root}.woff") format("woff"),
+			url("webfonts/#{$file_root}.ttf") format("truetype");
+		font-display: #{$font_display};
+	}
+}
+
+@include font-face-new("GTWalsheim", "gt-walsheim-regular", "swap");
+@include font-face-new("GTWalsheimMedium", "gt-walsheim-medium", "swap");
+@include font-face-new("GTWalsheimLight", "gt-walsheim-light", "fallback");
+@include font-face-new("GTWalsheimBold", "gt-walsheim-bold", "fallback");
